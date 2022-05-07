@@ -10,6 +10,8 @@ const userSchema = new mongoose.Schema({
 profileImages: {type: Array, required: true, min: 1},  
   createdAt: { type: Date, required: true },
   updatedAt: { type: Date, required: true },
+  book_id: [{type:mongoose.Schema.Types.ObjectId, ref:"book"}],
+    comment_id: [{type:mongoose.Schema.Types.ObjectId, ref:"comment"}],
 });
 
 const User = mongoose.model("users", userSchema);
